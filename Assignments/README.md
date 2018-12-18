@@ -175,7 +175,7 @@ PS:
 Write a function called "sumOfEvensAndOdds", that takes an array of integers as input and returns another array of integers of length 2. The first element in the returned array is the sum of all even numbers in the input array, and the second element in the returned array is the sum of all odd numbers in the input array.
 
 ````java
-public int[] sumOfEvensAndOdds(int []nums) { 
+public static int[] sumOfEvensAndOdds(int []nums) { 
 	// do stuff here
 	return null;
 }
@@ -213,7 +213,7 @@ Call the function in main, multiple times by supplying multiple values and verif
 Write a function called "reverseByWords", that takes a sentence (string) as an input, and returns another string. The return value must be a sentence in which the words in the original sentence appear in reverse order.
 
 ````java
-public String reverseByWords(String sentence) { 
+public static String reverseByWords(String sentence) { 
 	// do stuff here
 	return null; 
 }
@@ -236,7 +236,7 @@ Call the function in main, multiple times by supplying multiple values and verif
 Write a function called "inWords" that takes a number between 1 and 99,99,99,999 and returns a String representing the input number in words.
 
 ````java
-public String inWords(int num) { 
+public static String inWords(int num) { 
 	// do stuff here
 	return null; 
 }
