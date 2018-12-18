@@ -56,7 +56,7 @@ Write a Java program to call the above function multiple times with different va
 Write a function called "sortThreeNumbers", which takes 3 distinct integers and prints them in ascending order.
 
 ````java
-public void sortThreeNumbers(int a, int b, int c) { 
+public static void sortThreeNumbers(int a, int b, int c) { 
 	// do stuff here
 }
 
@@ -77,7 +77,7 @@ Write a Java program to call the above function multiple times with different va
 Write a function called "sumOfPrimes", that takes two integers as input and returns the sum of all the prime numbers between the same.
 
 ````java
-public int sumOfPrimes(int from, int to) { 
+public static int sumOfPrimes(int from, int to) { 
 	// do stuff here
 	return 0; 
 }
@@ -97,7 +97,7 @@ In mathematics, the Fibonacci numbers are the numbers in the following integer s
 Write a function called "fibonacci", that takes index as paramter and returns the fibonacci number at that index.
 
 ````java
-public int fibonacci(int index) { 
+public static int fibonacci(int index) { 
 	// do stuff here
 	return 0; 
 }
@@ -131,11 +131,13 @@ In trignometry, the Sine of an angle is represented by the series below:
 
 Write a Java function that accepts angle in degrees and returns the sine of the given angle.
 
+
 Call the function in main, multiple times by supplying multiple values and verify the same.
 
 PS:
 * Divide the function into small reusable functions, if possible.
 * Do not use builtin Java classes like `Math`
+* Inside the **sine** function, use a loop that iterates for **n** times (for example 10)
 ---
 
 ### Assignment 9
