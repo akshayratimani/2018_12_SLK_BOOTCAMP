@@ -34,18 +34,6 @@ public class P10_WorkingWithArrays {
 		nums = new int[] { 100, 29, 48, 37, 58, 219, 489, 58 };
 		// the old array will now be considered for garbage collection
 		System.out.println("Values in nums = " + Arrays.toString(nums));
-		
+
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -277,3 +277,107 @@ Hint:
 `Math.random()` returns a number between 0.0 and 1.0
 
 
+---
+### Assignment 14
+
+Implement the following function:
+
+```java
+public static void printAllCombinations(String word) {
+	// do stuff here
+}
+```
+
+The function should take a word (no spaces and special characters, only alpha numeric), and print all possible combinations of letters in the given word.
+
+For example, for the input "win", the output should be:
+
+```
+[iwn, nwi, inw, wni, win, niw]
+```
+
+And for the input "vinod", the output should be:
+```
+[vidon, vonid, doniv, dovin, inodv, ivdon, vdnio, nivod, ovdin, ivodn, viodn, noidv, 
+ondiv, dvoni, vidno, indvo, ivdno, nvodi, oindv, oivdn, idvon, dnovi, idnov, nvdoi, 
+onidv, doinv, vndoi, voind, noivd, vdion, iovnd, ovidn, nvoid, idvno, ionvd, dvnoi, 
+vnido, oidvn, vdoni, ndivo, vindo, novdi, idnvo, ndoiv, oidnv, dionv, vndio, iovdn, 
+iondv, viond, ndvoi, odniv, odvin, diovn, nodiv, nviod, onvdi, vodni, invod, ovndi, 
+vinod, dinov, vodin, divon, donvi, nvdio, ivnod, idonv, ovdni, dvion, nidov, ovnid, 
+ondvi, niodv, idovn, ndvio, onvid, dvino, divno, vnoid, dnoiv, odivn, ndiov, vondi, 
+nvido, dnivo, dinvo, dnvoi, odinv, dvoin, iodnv, nidvo, doivn, invdo, ovind, vdoin, 
+iodvn, vnodi, oinvd, ndovi, vdino, ivndo, onivd, nivdo, oivnd, inovd, ivond, dnvio, 
+odnvi, voidn, novid, dniov, dovni, vniod, nodvi, odvni, vdnoi, dvnio, indov, niovd]
+
+```
+
+Call the function in main, multiple times by supplying multiple values and verify the same.
+
+---
+### Assignment 15
+
+Create classes `Circle` and `Cylinder` as shown in the *UML* diagram below:
+
+![](http://www.ntu.edu.sg/home/ehchua/programming/java/images/ExerciseOOP_CircleCylinder.png "")
+
+
+In the `main()` function of a Program class, create an array of `Circle` references with the initialization shown below:
+
+````java
+Circle[] circles = {
+	new Cylinder(12.34),
+	new Cylinder(12.34, 10.0),
+	new Cylinder(12.34, 10.0, "blue")
+};
+
+````
+
+Print the area of the circular region of each cylinder along with the volume of the same.
+
+
+---
+### Assignment 16
+
+Create the classes `Person`, `Student`, and `Staff` as shown in the *UML* diagram below:
+
+![](http://www.ntu.edu.sg/home/ehchua/programming/java/images/ExerciseOOP_PersonAndSubclasses.png "")
+
+
+
+In the `main()` function of a Program class, create an array of `Person` references with the initialization shown below:
+
+````java
+Person[] people = {
+	new Student("Shyam", "Bangalore, Karnataka", "Java fundamentals", 2010, 4500.0),
+	new Staff("Anand", "Bangalore, Karnataka", "Delhi Public school", 35000.0), 
+	new Staff("Umesh", "Bangalore, Karnataka", "National Public school", 42000.0), 
+	new Student("Suresh", "Hassan, Karnataka", "Java fundamentals", 2012, 4750.0),
+	new Student("Kiran", "Vasco, Goa", "Reactjs", 2017, 12500.0)
+};
+
+````
+
+Print the details of all `Person` objects (using the `toString()`).
+
+
+---
+
+### Assignment 17
+
+Create the classes `Shape`, `Circle`, `Rectangle`, and `Square` as shown in the *UML* diagram below:
+
+
+![](http://www.ntu.edu.sg/home/ehchua/programming/java/images/ExerciseOOP_ShapeAndSubclasses.png "")
+
+
+The `toString` function of the above classes should return text as given below:
+
+Classname|Sample return value from toString()
+---|---
+Shape|A Shape with color of xxx and filled/Not filled
+Circle|A Circle with radius=xxx, which is a subclass of yyy (where yyy is the output of the toString() method from the superclass)
+Rectangle|A Rectangle with width=xxx and length=zzz, which is a subclass of yyy (where yyy is the output of the toString() method from the superclass)
+Square|A Square with side=xxx, which is a subclass of yyy (where yyy is the output of the toString() method from the superclass)
+
+In the `main()` method of a Program class, create an array of 10 `Shape` references containing a mixture of `Circle`, `Rectangle` and `Square` objects of different dimensions. Using a loop, print the `perimeter` and `area` for all of them.
+
