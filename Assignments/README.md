@@ -461,3 +461,4 @@ You are required to understand the way the application works, and recreate the s
 
 Once the numbers are arranged properly, a **contratulations** message should appear, and the application must terminate.
 
+<video src="./game.mov" width="100%">
