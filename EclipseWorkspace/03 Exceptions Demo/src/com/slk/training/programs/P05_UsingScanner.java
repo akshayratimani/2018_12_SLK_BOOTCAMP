@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class P05_UsingScanner {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in); // able to read from keyboard buffer
 			
