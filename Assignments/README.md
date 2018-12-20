@@ -441,3 +441,23 @@ For input "2018-02", the output should be:
 ```
 The method should throw a custom exception **InvalidDateException**, in case if the input does not represent a valid year/month combination, and **InvalidInputException** in case if the input is not in the expected YYYY-MM format.
 
+---
+
+### Assignment 20
+
+Download the file <a href="./game.jar">game.jar</a>.
+
+Open a command prompt in the location where you downloaded the jar file and run the following command: 
+
+```shell
+java -jar game.jar
+```
+
+This will run a Java program from the JAR file, and will ask you to enter a dimension (of a matrix). Please enter a number between 3 and 10.
+
+The game will show you a shuffled matrix of numbers, with an empty box. Our goal is to arrange the numbers in ascending order by moving numbers around the box.
+
+You are required to understand the way the application works, and recreate the same as a Java application.
+
+Once the numbers are arranged properly, a **contratulations** message should appear, and the application must terminate.
+
