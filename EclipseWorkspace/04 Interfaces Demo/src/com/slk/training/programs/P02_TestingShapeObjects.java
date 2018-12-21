@@ -21,15 +21,6 @@ public class P02_TestingShapeObjects {
 		for(Shape s: objects) {
 			s.printArea();
 		}
+		
 	}
-
 }
-
-
-
-
-
-
-
-
-
