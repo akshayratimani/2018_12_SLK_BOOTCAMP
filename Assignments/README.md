@@ -569,7 +569,7 @@ Create the following classes in the respective packages.
 * Class com.slk.assignment22.dao.impl.ContactsDaoHashMapImpl
 
 The code for the above classes/interfaces are shared below.
-#### Note: DO NOT CHANGE THE CODE FOR THESE CLASSES/INTERFACES
+#### Note: DO NOT CHANGE THE CODE FOR THESE CLASSES/INTERFACES (except ContactsDaoHashMapImpl)
 
 Class *com.slk.assignment22.utils.KeyboardUtil*
 
