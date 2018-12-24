@@ -559,14 +559,111 @@ System.out.println(m3);
 
 Create the following classes in the respective packages.
 
+* Class com.slk.assignment22.utils.KeyboardUtil
+* Class com.slk.assignment22.utils.DateUtil
+* Enum com.slk.assignment22.entity.Gender
 * Class com.slk.assignment22.entity.Contact
 * Class com.slk.assignment22.dao.DaoException
 * Interface com.slk.assignment22.dao.ContactsDao
 * Class com.slk.assignment22.dao.DaoFactory
+* Class com.slk.assignment22.dao.impl.ContactsDaoHashMapImpl
 
 The code for the above classes/interfaces are shared below.
 #### Note: DO NOT CHANGE THE CODE FOR THESE CLASSES/INTERFACES
 
+Class *com.slk.assignment22.utils.KeyboardUtil*
+
+```java
+package com.slk.assignment22.utils;
+
+import java.util.Date;
+import java.util.Scanner;
+
+@SuppressWarnings("resource")
+public final class KeyboardUtil {
+
+	private KeyboardUtil() {
+	}
+
+	public static String getString(String message) {
+		System.out.print(message);
+		Scanner sc = new Scanner(System.in);
+		return sc.nextLine();
+	}
+
+	public static int getInt(String message) {
+		System.out.print(message);
+		Scanner sc = new Scanner(System.in);
+		return sc.nextInt();
+	}
+
+	public static double getDouble(String message) {
+		System.out.print(message);
+		Scanner sc = new Scanner(System.in);
+		return sc.nextDouble();
+	}
+
+	public static Date getDate(String message) {
+		return DateUtil.toDate(getString(message));
+	}
+
+}
+
+```
+
+
+Class *com.slk.assignment22.utils.DateUtil*
+
+```java
+package com.slk.assignment22.utils;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public final class DateUtil {
+
+	public static String PATTERN = "yyyy-MM-dd";
+
+	private DateUtil() {
+	}
+
+	public static String toString(Date input) {
+		if(input==null) {
+			return "null";
+		}
+		
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat(PATTERN);
+			return sdf.format(input);
+		} catch (Exception e) {
+			return "";
+		}
+	}
+
+	public static Date toDate(String input) {
+		SimpleDateFormat sdf = new SimpleDateFormat(PATTERN);
+		sdf.setLenient(false);
+		try {
+			return sdf.parse(input);
+		} catch (ParseException e) {
+			return null;
+		}
+	}
+}
+
+```
+
+Enum: *com.slk.assignment22.entity.Gender*
+
+```java
+package com.slk.assignment22.entity;
+
+public enum Gender {
+	MALE, FEMALE
+}
+
+```
 
 Class: *com.slk.assignment22.entity.Contact*
 
@@ -663,10 +760,7 @@ Interface *com.slk.assignment22.dao.DaoFactory*
 ```java
 package com.slk.assignment22.dao;
 
-import com.slk.assignment22.dao.impl.ContactsDaoArrayListImpl;
-import com.slk.assignment22.dao.impl.ContactsDaoCsvImpl;
 import com.slk.assignment22.dao.impl.ContactsDaoHashMapImpl;
-import com.slk.assignment22.dao.impl.ContactsDaoJdbcImpl;
 
 public final class DaoFactory {
 
@@ -681,8 +775,7 @@ public final class DaoFactory {
 			 // return new ContactsDaoJdbcImpl();
 			 break;
 		case "HASHMAP":
-			// return new ContactsDaoHashMapImpl();
-			break;
+			return new ContactsDaoHashMapImpl();
 		case "CSV":
 			// return new ContactsDaoCsvImpl();
 			break;
@@ -698,6 +791,8 @@ public final class DaoFactory {
 
 
 Create a class com.slk.assignment22.dao.impl.ContactsDaoHashMapIpml that implements the interface com.slk.assignment22.dao.ContactsDao, and implement the abstract functions inherited from the interface. The class must have a variable of *java.util.Map* type and must be initialized to an instance of *java.util.HashMap*. The methods from the interface which are implemented here must make use of this *map* to store and retrieve the *Contact* data. When implemented properly, the application should work properly as expected.
+
+class *com.slk.assignment22.dao.impl.ContactsDaoHashMapIpml* 
 
 ```java
 public class ContactsDaoHashMapIpml implements ContactsDao {
@@ -732,11 +827,11 @@ import com.slk.assignment22.entity.Gender;
 import com.slk.assignment22.utils.DateUtil;
 import com.slk.assignment22.utils.KeyboardUtil;
 
-public class PhonebookApp {
+public class Main {
 
 	private ContactsDao dao;
 
-	public PhonebookApp() throws DaoException {
+	public Main() throws DaoException {
 		// LOOSE COUPLING VIA FACTORY METHOD
 		dao = DaoFactory.getContactsDao();
 	}
@@ -1067,7 +1162,7 @@ public class PhonebookApp {
 	}
 
 	public static void main(String[] args) throws DaoException {
-		new PhonebookApp().start();
+		new Main().start();
 	}
 
 }
