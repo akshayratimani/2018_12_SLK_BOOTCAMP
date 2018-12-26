@@ -21,3 +21,5 @@
 <img src="./images/21.png" width="100%">
 <img src="./images/22.png" width="100%">
 <img src="./images/23.png" width="100%">
+<img src="./images/24.png" width="100%">
+<img src="./images/25.png" width="100%">
