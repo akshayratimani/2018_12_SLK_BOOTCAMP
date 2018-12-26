@@ -1171,3 +1171,26 @@ public class Main {
 
 Run the above class as a Java Application and test each of the operations.
 #### Note: DO NOT EDIT THE ABOVE CODE
+
+---
+
+### Assignment 23
+
+Create a class `com.slk.assignment22.dao.impl.ContactsDaoCsvImpl` that implements the interface `com.slk.assignment22.dao.ContactsDao`, such that the data is now stored in a CSV file.
+
+*Note: Avoid unnecessary read/write operations on the file*
+
+Hint: 
+* You may write some private helper methods for read/write operations and call them at appropriate locations of the overridden functions.
+
+
+### Assignment 24
+
+Create a class `com.slk.assignment22.dao.impl.ContactsDaoBinaryImpl` that implements the interface `com.slk.assignment22.dao.ContactsDao`, such that the data is now stored in a binary file. 
+
+Make the class `com.slk.assignment22.entity.Contact` a serializable class.
+
+*Note: Avoid unnecessary read/write operations on the file*
+
+Hint: 
+* You may write some private helper methods for read/write operations and call them at appropriate locations of the overridden functions.
