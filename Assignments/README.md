@@ -1182,7 +1182,7 @@ Create a class `com.slk.assignment22.dao.impl.ContactsDaoCsvImpl` that implement
 
 Hint: 
 * You may write some private helper methods for read/write operations and call them at appropriate locations of the overridden functions.
-
+* Update the `com.slk.assignment22.dao.DaoFactory` with necessary code
 
 ### Assignment 24
 
@@ -1194,3 +1194,4 @@ Make the class `com.slk.assignment22.entity.Contact` a serializable class.
 
 Hint: 
 * You may write some private helper methods for read/write operations and call them at appropriate locations of the overridden functions.
+* Update the `com.slk.assignment22.dao.DaoFactory` with necessary code
