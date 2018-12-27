@@ -1,0 +1,45 @@
+package com.slk.training.utils;
+
+import java.util.Scanner;
+
+@SuppressWarnings("resource")
+public final class KeyboardUtil {
+
+	private KeyboardUtil() {
+	}
+	
+	public static int getInt(String message) {
+		System.out.print(message);
+		Scanner sc = new Scanner(System.in); // do not call sc.close();
+		return sc.nextInt();
+	}
+	
+	public static double getDouble(String message) {
+		System.out.print(message);
+		Scanner sc = new Scanner(System.in); // do not call sc.close();
+		return sc.nextDouble();
+	}
+	
+	public static String getString(String message) {
+		System.out.print(message);
+		Scanner sc = new Scanner(System.in); // do not call sc.close();
+		return sc.nextLine();
+	}
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

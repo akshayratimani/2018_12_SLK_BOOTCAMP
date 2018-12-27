@@ -1195,3 +1195,83 @@ Make the class `com.slk.assignment22.entity.Contact` a serializable class.
 Hint: 
 * You may write some private helper methods for read/write operations and call them at appropriate locations of the overridden functions.
 * Update the `com.slk.assignment22.dao.DaoFactory` with necessary code
+
+---
+
+### Assignment 25
+
+JDBC implementation
+
+Create a new database `assignment_22`, and create table `CONTACTS` with the following fields:
+
+Column name|Data type
+---|---
+id|int (primary key, autoincrement)
+first_name|varchar(50)
+last_name|varchar(50)
+gender|varchar(10)
+email|varchar(250)
+phone|varchar(50)
+address|varchar(250)
+city|varchar(50)
+state|varchar(50)
+pincode|Integer
+country|varchar(50)
+birth_date|Date
+
+
+Create a class `ContactsDaoJdbcImpl` that implements `ContactsDao` interface
+
+Each method of this class must use *JDBC* api to store/retrieve data from **CONTACTS** table in the H2 database.
+
+For example, the `getContacts()` method should do the following:
+
+```java
+public List<Contact> getContacts() throws DaoExceptoion {
+	String sql = "select * from contacts";
+	List<Contct> list = new ArrayList<>();
+
+	try(
+		// Open Connection
+		// Create PreparedStatement
+		// Execute the query and get the ResultSet
+	) {
+		// Using a loop, for each record in the ResultSet, 
+		// create a Contact object and add to the ArrayList
+	}
+	catch(Exception ex) {
+		throw new DaoException(ex);
+	}
+
+	return list;
+}
+```
+
+Another example:
+
+The `addContact(Contact contact)` method should do the following:
+
+```java
+public void addContact(Contact contact) throws DaoException {
+	// Do the necessary validations
+
+	String sql = "insert into contacts (first_name, last_name, gender, email, phone, address, city, state, pincode, country, birth_date) values (?,?,?,?,?,?,?,?,?,?,?)";
+
+	try(
+		// Open Connection
+		// Create PreparedStatement
+	) {
+		// set the PreparedStatement's parameters using the function's argument contact
+		// For example, stmt.setString(1, contact.getFirstname()) and so on..
+
+		// for stmt.setDate(pos, value), value should be of java.sql.Date and not java.util.Date
+		// to convert, use this statment: new java.sql.Date(contact.getBirthDate().getTime())
+
+		// execute the statement
+	}
+	catch(Exception ex) {
+		throw new DaoException(ex);
+	}
+
+}
+```
