@@ -1275,3 +1275,21 @@ public void addContact(Contact contact) throws DaoException {
 
 }
 ```
+
+Note: Conversion of `java.sql.Date` to `java.util.Date`
+
+The class `java.sql.Date` inherits from `java.util.Date`. 
+
+Consider, two Date variables - d1 and d2.
+
+```java
+java.util.Date d1 = ....;
+java.sql.Date d2 = ...;
+
+d1 = d2; // downcasting; implicit
+d2 = d1; // error
+d2 = (java.sql.Date) d1; // error
+
+d2 = new java.sql.Date(d1.getTime()); // creates a new `java.sql.Date` object using the milliseconds represented by d1
+```
+
