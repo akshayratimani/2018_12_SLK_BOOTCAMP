@@ -23,3 +23,7 @@
 <img src="./images/23.png" width="100%">
 <img src="./images/24.png" width="100%">
 <img src="./images/25.png" width="100%">
+<img src="./images/26.png" width="100%">
+<img src="./images/27.png" width="100%">
+<img src="./images/28.png" width="100%">
+<img src="./images/29.png" width="100%">
