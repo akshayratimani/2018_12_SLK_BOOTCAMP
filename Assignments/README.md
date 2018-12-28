@@ -1315,3 +1315,26 @@ Note:
 
 
 
+### Assignment 27
+
+Create a new `Dynamic Web Project` with the name `Assignment 27`.
+
+The homepage should display a text box with a label *Enter category: * along with a button to submit.
+
+When the button is clicked, a servlet should be invoked which displays the list of all products that belongs to the input category, in the form of a HTML table.
+
+Also, provide a hyperlink to go back to the homepage.
+
+Create the following classes and interfaces for the working of the above application
+
+* Entity class - com.slk.training.entity.Product
+* Dao interface - com.slk.training.dao.ProductDao (containing the methods listed below)
+	* public Product getProductById(int id) throws DaoException
+	* public List<Product> getAllProducts() throws DaoException
+	* public List<Product> getProductsByCategory(String category) throws DaoException
+* Dao factory class - com.slk.training.dao.DaoFactory (containing the methods listed below)
+	* public static ProductDao getProductDao() throws DaoExceptoion (returns an instance of ProductDaoJdbcImpl)
+* Dao implementation class - com.slk.training.dao.impl.ProductDaoJdbcImpl implements com.slk.training.dao.ProductDao
+* Servlet class - com.slk.training.web.ProductsByCategoryServlet
+	* The doGet(..) of this servlet uses the DaoFactory to get a ProductDao instance using which the search is done
+
