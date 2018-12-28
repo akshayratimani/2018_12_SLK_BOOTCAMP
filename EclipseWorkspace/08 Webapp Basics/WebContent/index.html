@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My first web application</title>
+</head>
+<body>
+	<h1>Generate multiplication table</h1>
+	<hr />
+	
+	<form method="GET" action="./table">
+	
+		<div>
+			<label for="num">Enter a number: </label>
+			<input id="num" name="number" value="35">
+		</div>
+		
+		<div>
+			<label for="clr">Select a color: </label>
+			<select name="color" id="clr">
+				<option value="black">Black</option>
+				<option value="red">Red</option>
+				<option value="green">Green</option>
+				<option value="blue">Blue</option>
+				<option value="magenta">Magenta</option>
+			</select>
+		</div>
+		
+		<button type="submit">Generate</button>
+	
+	</form>
+</body>
+</html>

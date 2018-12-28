@@ -1293,3 +1293,25 @@ d2 = (java.sql.Date) d1; // error
 d2 = new java.sql.Date(d1.getTime()); // creates a new `java.sql.Date` object using the milliseconds represented by d1
 ```
 
+---
+
+### Assignment 26
+
+Create a new `Dynamic Web Project` with the name `Assignment 26`.
+
+The homepage should display a text box with a label *Enter category: * along with a button to submit.
+
+When the button is clicked, a servlet should be invoked which displays the list of all products that belongs to the input category, in the form of a HTML table.
+
+Also, provide a hyperlink to go back to the homepage.
+
+Note:
+
+* Use member variables of type Connection, PreparedStatement and ResultSet
+* Initialize the Connection and PreparedStatement in the `init` method
+* Close the Connection and PreparedStatement in the `destroy` method
+* Execute the query in the `doGet` method and close the ResultSet also in the same.
+* In case if there are no products for the entered category, display an appropriate message.
+
+
+
