@@ -1338,3 +1338,6 @@ Create the following classes and interfaces for the working of the above applica
 * Servlet class - com.slk.training.web.ProductsByCategoryServlet
 	* The doGet(..) of this servlet uses the DaoFactory to get a ProductDao instance using which the search is done
 
+Note:
+
+* copy and paste the `h2-1.4.xxx.jar` into `WebContent/WEB-INF/lib` directory, and the JAR file will be automatically be in the CLASSPATH
