@@ -1313,7 +1313,42 @@ Note:
 * Execute the query in the `doGet` method and close the ResultSet also in the same.
 * In case if there are no products for the entered category, display an appropriate message.
 
+```java
+public class ProductsByCategoryServlet .... {
+	private Connection conn;
+	private PreparedStatement stmt;
+	private ResultSet rs;
 
+	public void init() {
+		try {
+			conn = ...
+			stmt = ...
+		}
+		catch(Exception ex) {
+			...
+		}
+	}
+	public void destroy() {
+		try {
+			stmt.close();
+			conn.close();
+		}
+		catch(Exception ex) {
+			...
+		}
+	}
+	protected void doGet(...) {
+		try {
+			rs = ...
+			...
+			...
+		}
+		catch(Exception ex) {
+			...
+		}
+	}
+}
+```
 
 ### Assignment 27
 
