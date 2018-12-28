@@ -1350,6 +1350,11 @@ public class ProductsByCategoryServlet .... {
 }
 ```
 
+Here is the output expected:
+
+<img src="./images/assignment26.gif" width="100%">
+
+
 ### Assignment 27
 
 Create a new `Dynamic Web Project` with the name `Assignment 27`.
