@@ -3,8 +3,8 @@ package com.slk.training.entity;
 public class Product {
 
 	private int id;
-	private String name;
-	private String category;
+	private String name = "";
+	private String category = "";
 	private double price;
 
 	public Product() {

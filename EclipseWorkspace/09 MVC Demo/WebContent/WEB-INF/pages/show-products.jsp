@@ -21,7 +21,13 @@
 		%>
 		<tr>
 			<td><%=p.getId()%></td>
-			<td><%=p.getName()%></td>
+			<td>
+				<%=p.getName()%>
+				<span class="pull-right" style="font-size: 13pt">
+					<a href="./delete-product?id=<%=p.getId() %>" onclick="confirmAndDelete()"><i class="fa fa-trash"></i></a>
+					<a href="./edit-product?id=<%=p.getId() %>"><i class="fa fa-pencil"></i></a>
+				</span>
+			</td>
 			<td><%=p.getCategory()%></td>
 			<td><%=p.getPrice()%></td>
 		</tr>
@@ -31,6 +37,14 @@
 	</tbody>
 </table>
 
+<script>
+function confirmAndDelete() {
+	if(!confirm("Are you sure to delete this?")) {
+		event.preventDefault()
+		return false;
+	}
+}
+</script>
 <%@include file="./footer.jsp"%>
 
 
