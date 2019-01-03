@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="jdbc_1" class="com.slk.training.dao.ProductDaoJdbcImpl">
+		<!-- This bean depends on driver, url, user and password -->
+		<!-- we can ask spring to inject (supply) these values using
+		constructor or properties (setters) -->
+		
+		<!-- property injection -->
+		<property name="driver" value="org.h2.Driver" /> <!-- calls the setDriver("org.h2.Driver") -->
+		<property name="url" value="jdbc:h2:tcp://localhost/~/slk_training_2018_12" />
+		<property name="user" value="sa" />
+		<property name="password" value="" />
+	</bean>
+	
+	<bean name="jdbc_2" class="com.slk.training.dao.ProductDaoJdbcImpl">
+		<!-- constructor injection -->
+		<constructor-arg value="org.h2.Driver" />
+		<constructor-arg value="jdbc:h2:tcp://localhost/~/slk_training_2018_12" />
+		<constructor-arg value="sa" />
+		<constructor-arg value="" />
+	</bean>
+	
+	<bean name="jdbc_3" class="com.slk.training.dao.ProductDaoJdbcImpl">
+		<property name="jdbcInfo" >
+			<array>
+				<value>org.h2.Driver</value>
+				<value>jdbc:h2:tcp://localhost/~/slk_training_2018_12</value>
+				<value>sa</value>
+				<value></value>
+			</array>
+		</property>
+	</bean>
+	
+	<bean name="jdbc_4" class="com.slk.training.dao.ProductDaoJdbcImpl">
+		<!-- inject a Map object using property injection -->
+		<property name="jdbcMap">
+			<map>
+				<entry key="jdbc.driver" value="org.h2.Driver" />
+				<entry key="jdbc.url" value="jdbc:h2:tcp://localhost/~/slk_training_2018_12" />
+				<entry key="jdbc.user" value="sa" />
+				<entry key="jdbc.password" value="" />
+			</map>
+		</property>
+	</bean>
+	
+	
+	<bean name="jdbc_5" class="com.slk.training.dao.ProductDaoJdbcImpl">
+		<!-- constructor injection using anonymous object (a bean without id/name) -->
+		<constructor-arg>
+			<bean class="org.apache.commons.dbcp2.BasicDataSource">
+				<property name="driverClassName" value="org.h2.Driver" />
+				<property name="url" value="jdbc:h2:tcp://localhost/~/slk_training_2018_12" />
+				<property name="username" value="sa" />
+				<property name="password" value="" />
+			</bean>
+		</constructor-arg>
+	</bean>
+	
+	
+	
+	<bean name="jdbc" class="com.slk.training.dao.ProductDaoJdbcImpl">
+		<!-- property injection using anonymous object (a bean without id/name) -->
+		<property name="dataSource">
+			<bean class="org.apache.commons.dbcp2.BasicDataSource">
+				<property name="driverClassName" value="org.h2.Driver" />
+				<property name="url" value="jdbc:h2:tcp://localhost/~/slk_training_2018_12" />
+				<property name="username" value="sa" />
+				<property name="password" value="" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean name="csv,file" class="com.slk.training.dao.ProductDaoCsvImpl">
+	</bean>
+	
+</beans>
+
+
+
+

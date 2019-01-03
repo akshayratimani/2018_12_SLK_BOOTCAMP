@@ -38,3 +38,6 @@
 <img src="./images/38.png" width="100%">
 <img src="./images/39.png" width="100%">
 <img src="./images/40.png" width="100%">
+<img src="./images/41.png" width="100%">
+<img src="./images/42.png" width="100%">
+<img src="./images/43.png" width="100%">
