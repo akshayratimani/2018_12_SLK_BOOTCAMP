@@ -17,14 +17,14 @@
 		<property name="password" value="" />
 	</bean>
 
-	<bean name="jdbc_1" class="com.slk.training.dao.ProductDaoJdbcImpl">
+	<bean name="jdbc" class="com.slk.training.dao.ProductDaoJdbcImpl" lazy-init="true">
 		<!-- injecting another bean (in the container) to this bean is called "wiring". 
 			This can be done using "manual" or "auto"matically -->
 		<!-- <property name="dataSource" ref="dbcp" /> -->
 		<constructor-arg ref="dbcp" />
 	</bean>
 
-	<bean name="jdbc" autowire="byName" class="com.slk.training.dao.ProductDaoJdbcImpl">
+	<bean name="jdbc_1" autowire="byName" class="com.slk.training.dao.ProductDaoJdbcImpl" lazy-init="true">
 	</bean>
 
 </beans>

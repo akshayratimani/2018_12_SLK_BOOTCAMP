@@ -5,10 +5,17 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.slk.training.entity.Product;
+
+@Repository("jdbc")
 public class ProductDaoJdbcImpl implements ProductDao {
 
 	private String driver;
@@ -16,14 +23,18 @@ public class ProductDaoJdbcImpl implements ProductDao {
 	private String user;
 	private String password;
 
+	@Autowired(required = false)
 	private DataSource dataSource;
 
 	// spring calls this constructor by default
 	public ProductDaoJdbcImpl() {
+		System.out.println("An object of ProductDaoJdbcImpl is created using default constructor");
 	}
 
 	// spring can call this constructor via constructor-injection
 	public ProductDaoJdbcImpl(String driver, String url, String user, String password) {
+		System.out.println("An object of ProductDaoJdbcImpl is created using overloaded constructor with string args");
+
 		this.driver = driver;
 		this.url = url;
 		this.user = user;
@@ -32,6 +43,7 @@ public class ProductDaoJdbcImpl implements ProductDao {
 
 	// parameterized constructor for dependency injection
 	public ProductDaoJdbcImpl(DataSource dataSource) {
+		System.out.println("An object of ProductDaoJdbcImpl is created using overloaded constructor with DataSource");
 		this.dataSource = dataSource;
 	}
 
@@ -95,6 +107,48 @@ public class ProductDaoJdbcImpl implements ProductDao {
 		} catch (Exception ex) {
 			throw new DaoException(ex);
 		}
+	}
+
+	@Override
+	public void addProduct(Product product) throws DaoException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Product getProduct(int id) throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateProduct(Product product) throws DaoException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteProduct(int id) throws DaoException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Product> getAllProducts() throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> getProductsByPriceRange(double min, double max) throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> getProductsByCategory(String category) throws DaoException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
