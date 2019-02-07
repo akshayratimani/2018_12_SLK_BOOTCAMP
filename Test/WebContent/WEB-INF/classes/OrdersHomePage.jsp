@@ -27,7 +27,7 @@
 
 	<%
 		OrdersClass obj[] = (OrdersClass[]) request.getAttribute("orders");
-		System.out.println("Final:" + obj[0]);
+		
 		if (obj.length == 0) {
 	%>
 
@@ -56,7 +56,7 @@
 		<tbody>
 			<tr>
 				<td><%=obj[i].getTableNumber()%></td>
-				<td><%=obj[i].getDish()%></td>
+				<td><%=obj[i].getDish()%> <a style="float:right" href="./RemoveOrder?tno=<%=obj[i].getTableNumber() %>" class="btn btn-primary">remove</a></td>
 			</tr>
 			<%
 				}

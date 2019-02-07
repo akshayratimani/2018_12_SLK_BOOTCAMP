@@ -15,17 +15,23 @@ public class Manager {
 		
 		
 		orders[obj.getTableNumber()-1] = obj;
-		System.out.println("After adding:"+orders[0].toString());
+	
 	}
 
 	public OrdersClass[] displayOrders() {
 		try {
-			System.out.println("Displaying:"+orders[0].toString());
+		
 			
 		} catch (Exception e) {
 			
 		}
 		return orders;
+	}
+	
+	public void removeOrder(int tno) {
+		
+		orders[tno]=null;
+		
 	}
 
 }
