@@ -15,7 +15,7 @@
 		<h2>
 			<b>Hotel Management</b>
 		</h2>
-		<div style="position: absolute; left: 1450px; top: 30px;">
+		<div style="position: absolute; left: 1350px; top: 30px;">
 			<a class="btn btn-primary" href="./AddDish">AddDish</a>
 		</div>
 		<hr>
@@ -23,31 +23,44 @@
 
 	<h3>Orders</h3>
 
-	<table class="table table=striped table-bordered table-hover">
-		<thead>
-			<tr>
-				<th>TableNumber</th>
-				<th>Order</th>
-			</tr>
-		</thead>
-		<tbody>
 
+
+	<%
+		OrdersClass obj[] = (OrdersClass[]) request.getAttribute("orders");
+		System.out.println("Final:" + obj[0]);
+		if (obj.length == 0) {
+	%>
+
+	<h6>No Orders</h6>
+
+	<%
+		} else {
+			
+			%>
+			<table class="table table=striped table-bordered table-hover">
+			<thead>
+				<tr>
+					<th>TableNumber</th>
+					<th>Order</th>
+				</tr>
+			</thead>
 			<%
-				OrdersClass obj[] = (OrdersClass[]) request.getAttribute("orders");
-				if (obj[0] == null) {
-					
-					
+			
+
+			for (int i = 0; i < obj.length; i++) {
+				if (obj[i] == null) {
 
 				} else {
-
-					for (int i = 0; i < obj.length; i++) {
-			%>
+	%>
+	
+		<tbody>
 			<tr>
 				<td><%=obj[i].getTableNumber()%></td>
 				<td><%=obj[i].getDish()%></td>
 			</tr>
 			<%
 				}
+					}
 
 				}
 			%>

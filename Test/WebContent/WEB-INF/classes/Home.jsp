@@ -12,7 +12,7 @@
 
 <div style="background-color: lightblue;">
 <br>
-<h2><b>Hotel Management</b></h2>  <div style="position:absolute; left:1450px; top:30px;"><a class="btn btn-primary" href="./Orders">Orders</a></div>
+<h2><b>Hotel Management</b></h2>  <div style="position:absolute; left:1350px; top:30px;"><a class="btn btn-primary" href="./Orders">Orders</a></div>
 <hr>
 </div>
 

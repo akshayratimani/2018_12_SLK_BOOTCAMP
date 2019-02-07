@@ -14,7 +14,7 @@
 	<div style="background-color: lightblue;">
 		<br>
 		<h2>
-			<b>Hotel Management</b> <div style="position:absolute; left:1450px; top:30px;"><a class="btn btn-primary" href="./Orders">DisplayOrders</a></div>
+			<b>Hotel Management</b> <div style="position:absolute; left:1350px; top:30px;"><a class="btn btn-primary" href="./Orders">DisplayOrders</a></div>
 		</h2>
 		<hr>
 	</div>

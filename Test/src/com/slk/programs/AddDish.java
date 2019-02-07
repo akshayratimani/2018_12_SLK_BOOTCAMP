@@ -35,20 +35,8 @@ public class AddDish extends HttpServlet {
 		obj.setTableNumber(tno);
 		obj.setDish(dish);
 		
-		Manager o=(Manager) request.getAttribute("abc");
-		if(o==null)
-		{ 
-			Manager ob = new Manager();
-			request.setAttribute("abc", ob);
-			ob.addOrder(obj);
-		}
-		else
-		{
-			o.addOrder(obj);
-		}
-		
-		
-		System.out.println("Abc:"+o);
+		Manager ob = new Manager();
+		ob.addOrder(obj);
 		
 		
 		RequestDispatcher rd = request.getRequestDispatcher("./WEB-INF/classes/AddDish.jsp");

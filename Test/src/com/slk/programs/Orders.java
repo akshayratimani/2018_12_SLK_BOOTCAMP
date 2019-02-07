@@ -24,6 +24,11 @@ public class Orders extends HttpServlet {
 		Manager m = new Manager();
 		obj=m.displayOrders();
 		
+		try {
+			System.out.println("Obj:"+obj[0].toString());
+		} catch (Exception e) {
+			
+		}
 		request.setAttribute("orders", obj);
 
 		RequestDispatcher rd = request.getRequestDispatcher("./WEB-INF/classes/OrdersHomePage.jsp");
