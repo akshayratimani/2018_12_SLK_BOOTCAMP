@@ -24,7 +24,8 @@ public class RemoveOrder extends HttpServlet {
 		
 		obj.removeOrder(Integer.parseInt(a));
 		
-		response.sendRedirect("./Orders");
+		//response.sendRedirect("./Orders");
+		request.getRequestDispatcher("/Orders").forward(request, response);
 
 	}
 

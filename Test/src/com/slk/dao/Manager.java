@@ -4,7 +4,7 @@ import com.slk.entity.OrdersClass;
 
 public class Manager {
 
-	static OrdersClass orders[] = new OrdersClass[8];
+	static OrdersClass orders[] = new OrdersClass[7];
 	int i = 0;
 
 	public Manager() {
@@ -31,7 +31,9 @@ public class Manager {
 	public void removeOrder(int tno) {
 		
 		orders[tno]=null;
-		
+		if(orders[tno]==null) {
+			System.out.println("working");
+		}
 	}
 
 }
