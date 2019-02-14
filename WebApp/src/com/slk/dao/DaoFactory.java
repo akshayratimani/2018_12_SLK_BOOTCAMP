@@ -37,6 +37,10 @@ public class DaoFactory {
 		
 		return cart;
 	}
+	
+	public int getSize() {
+		return cart.size();
+	}
 
 	public void AddToCart(Products pr) {
 		cart.add(pr);

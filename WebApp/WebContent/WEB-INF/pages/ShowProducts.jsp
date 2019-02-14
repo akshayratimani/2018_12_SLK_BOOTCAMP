@@ -21,9 +21,15 @@
 		<hr
 			style="height: 1px; border: none; color: #333; background-color: #333;" />
 	</div>
+	
+	<%
+		int num = (int) request.getAttribute("n");
+		System.out.println("num"+num);
+	%>
 
 	<div style="position: absolute; left: 1220px; top: 30px;">
-		<a href="./MyCart"><img height="35px" width="35px" alt="Not found"
+		<a href="./MyCart"><span
+			style="position: absolute; bottom: 15px; left: 16px;"><font color="black" size="2px"><b><%=num%></b></font></span><img height="45px" width="45px" alt="Not found"
 			src="./assets/images/cart.png"><font color="black"><b>MyCart</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;<a
 			href="" class="btn btn-primary">Login</a>
 	</div>
@@ -32,6 +38,7 @@
 	<h3>List of all Products</h3>
 	<%
 		List<Products> li = (List<Products>) request.getAttribute("val");
+		
 
 		for (Products p : li) {
 	%>

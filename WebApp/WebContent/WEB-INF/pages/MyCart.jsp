@@ -51,13 +51,14 @@
 			<a href="./RemoveFromCart?id=<%=p.getId() %>" class="btn btn-primary">Remove</a> 
 			<hr>
 		</div>
+		&nbsp;&nbsp;&nbsp;<a href="Buy.jsp" class="btn btn-primary">Buy</a>
+		<br><br>
 	<%
 		}
 		}
 	%>
 		
-		&nbsp;&nbsp;&nbsp;<a href="Buy.jsp" class="btn btn-primary">Buy</a>
-		<br><br>
+		
 
 
 </body>

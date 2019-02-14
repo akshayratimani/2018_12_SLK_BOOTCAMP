@@ -24,6 +24,10 @@ public class ShowProductsManager {
 
 		return d.getProducts();
 	}
+	
+	public int getSize() {
+		return d.getSize();
+	}
 
 	public Products getProductById(int id) {
 
