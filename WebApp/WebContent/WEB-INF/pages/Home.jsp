@@ -26,8 +26,29 @@
 			style="position: absolute; bottom: 15px; left: 16px;"><font color="black" size="2px"><b>0</b></font></span><img
 			height="45px" width="45px" alt="Not found"
 			src="./assets/images/cart.png"><font color="black"><b>MyCart</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-			href="./ShowProducts" class="btn btn-primary">Show products</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-			href="./login" class="btn btn-primary">Login</a>
+			href="./ShowProducts" class="btn btn-primary">Show products</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			<% 
+			 Cookie ck1=new Cookie("name","");  
+	        ck1.setMaxAge(0);  
+	        response.addCookie(ck1);  
+			Cookie ck[]=request.getCookies();
+			
+	        if(ck!=null){
+	        	
+	            String name=ck[0].getValue();  
+	           if(!name.equals("")||name!=null){  
+	               out.print("<b>Welcome to Profile</b>");  
+	               out.print("<br>Welcome, "+name);  
+	           }  
+	        }else{
+	           %>
+				<a href="./login" class="btn btn-primary">Login</a>
+			<%
+			}
+	        %>
+			
+			
 	</div>
 
 

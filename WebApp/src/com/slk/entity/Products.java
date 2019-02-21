@@ -7,6 +7,7 @@ public class Products {
 	float price;
 	float rating;
 	
+	
 	public Products() {
 
 	}

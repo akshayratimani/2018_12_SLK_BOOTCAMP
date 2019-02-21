@@ -24,7 +24,7 @@ public class ShowProductsManager {
 
 		return d.getProducts();
 	}
-	
+
 	public int getSize() {
 		return d.getSize();
 	}
@@ -33,9 +33,8 @@ public class ShowProductsManager {
 
 		Products temp = new Products();
 		for (Products a : d.getProducts()) {
-			
-			if(id==a.getId())
-			{
+
+			if (id == a.getId()) {
 				temp.setId(a.getId());
 				temp.setName(a.getName());
 				temp.setPrice(a.getPrice());
@@ -44,9 +43,8 @@ public class ShowProductsManager {
 		}
 		return temp;
 	}
-	
-	public void AddToCart(int id)
-	{
+
+	public void AddToCart(int id) {
 		Products p = getProductById(id);
 		d.AddToCart(p);
 	}
@@ -54,14 +52,38 @@ public class ShowProductsManager {
 	public List<Products> getCartProducts() {
 		return d.getCartProducts();
 	}
-	
-	public void RemoveFromCart1(int id)
-	{
+
+	public void RemoveFromCart1(int id) {
 		Products p = getProductById(id);
-		System.out.println("SP:"+p);
+		System.out.println("SP:" + p);
 		d.RemoveFromCart(p);
-		
 	}
 
+	public List<Products> search(String name) {
 
+		List<Products> l = d.search(name);
+
+		return l;
+	}
+
+	public List<Products> SortByName() {
+
+		List<Products> li = d.SortByName();
+
+		return li;
+	}
+
+	public List<Products> SortByPrice() {
+
+		List<Products> li = d.SortByPrice();
+
+		return li;
+	}
+
+	public List<Products> SortByRating() {
+
+		List<Products> li = d.SortByRating();
+
+		return li;
+	}
 }

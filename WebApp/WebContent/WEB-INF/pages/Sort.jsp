@@ -13,6 +13,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
 <style type="text/css">
 .topnav .search-container button {
 	float: right;
@@ -42,15 +43,12 @@
 			style="height: 1px; border: none; color: #333; background-color: #333;" />
 	</div>
 
-	<%
-		int num = (int) request.getAttribute("n");
-		System.out.println("num" + num);
-	%>
+
 
 	<div style="position: absolute; left: 1220px; top: 30px;">
 		<a href="./MyCart"><span
 			style="position: absolute; bottom: 15px; left: 16px;"><font
-				color="black" size="2px"><b><%=num%></b></font></span><img height="45px"
+				color="black" size="2px"><b></b></font></span><img height="45px"
 			width="45px" alt="Not found" src="./assets/images/cart.png"><font
 			color="black"><b>MyCart</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=""
 			class="btn btn-primary">Login</a>
@@ -75,15 +73,14 @@
 	</div>
 
 	<%
-		List<Products> li = (List<Products>) request.getAttribute("val");
+		List<Products> li = (List<Products>) request.getAttribute("li");
 
 		for (Products p : li) {
 	%>
 	<div style="background-color: #DBE1E1">
 		<hr>
 		<b>ProductName:<%=p.getName()%></b><br> Price:<%=p.getPrice()%><br>
-		Rating:
-		<%
+		Rating:<%
 			int n = (int) p.getRating();
 				for (int i = 0; i < n; i++) {
 		%>
