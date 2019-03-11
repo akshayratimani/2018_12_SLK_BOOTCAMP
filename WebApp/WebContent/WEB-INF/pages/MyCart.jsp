@@ -49,6 +49,9 @@
 	%>
 	<div style="background-color: #DBE1E1">
 		<hr>
+		<div style="position: relative; left: 15px; top: 0px;">
+				<img width="150px" height="150px" alt="Image not Found" src="./assets/images/<%=p.getImg() %>" />
+			</div><br>
 		<b>ProductName:<%=p.getName()%></b><br> Price:<%=p.getPrice()%><br>
 		Rating::<%
 			int n = (int) p.getRating();

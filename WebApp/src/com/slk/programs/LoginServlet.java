@@ -11,6 +11,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.slk.dao.DaoFactory;
 
@@ -36,8 +37,8 @@ public class LoginServlet extends HttpServlet {
 		try {
 			if (u.equals(com.slk.dao.DaoFactory.checkUsername(u)) && p.equals(com.slk.dao.DaoFactory.checkPassword(p))) {
 				
-				Cookie ck = new Cookie("name", u);
-				response.addCookie(ck);
+				HttpSession session = request.getSession();
+				session.setAttribute("name", u);			
 				RequestDispatcher rd = request.getRequestDispatcher("./WEB-INF/pages/Home.jsp");
 				rd.forward(request, response);
 			} else {

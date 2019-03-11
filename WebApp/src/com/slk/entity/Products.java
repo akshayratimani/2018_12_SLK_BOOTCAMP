@@ -6,18 +6,28 @@ public class Products {
 	String name;
 	float price;
 	float rating;
+	String img;
 	
 	
 	public Products() {
 
 	}
 
-	public Products(int id, String name, float price, float rating) {
+	public Products(int id, String name, float price, float rating, String img) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.rating = rating;
+		this.img = img;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	public int getId() {
@@ -54,8 +64,11 @@ public class Products {
 
 	@Override
 	public String toString() {
-		return "Products [id=" + id + ", name=" + name + ", price=" + price + ", rating=" + rating + "]";
+		return "Products [id=" + id + ", name=" + name + ", price=" + price + ", rating=" + rating + ", img=" + img
+				+ "]";
 	}
+
+	
 
 	
 	

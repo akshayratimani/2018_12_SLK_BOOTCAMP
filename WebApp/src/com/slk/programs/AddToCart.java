@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.slk.dao.ShowProductsManager;
 import com.slk.entity.Products;
@@ -20,17 +21,23 @@ public class AddToCart extends HttpServlet {
 			throws ServletException, IOException {
 
 		String a = (String) request.getParameter("id");
-		
-		
-		ShowProductsManager ob = new ShowProductsManager();
-		Products p = ob.getProductById(Integer.parseInt(a));
-		
-		ob.AddToCart(Integer.parseInt(a));
-		
-		
-		response.sendRedirect("./ShowProducts");
+
+		HttpSession s = request.getSession(false);
+
+		String name = (String) s.getAttribute("name");
+
+		if (name == null) {
+			//response.sendRedirect("./login");
+			request.getRequestDispatcher("./login").forward(request, response);
+		} else {
+			ShowProductsManager ob = new ShowProductsManager();
+			Products p = ob.getProductById(Integer.parseInt(a));
+
+			ob.AddToCart(Integer.parseInt(a));
+
+			response.sendRedirect("./ShowProducts");
+		}
+
 	}
-
-
 
 }

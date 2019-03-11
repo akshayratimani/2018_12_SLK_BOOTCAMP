@@ -25,9 +25,30 @@ public class MyCart extends HttpServlet {
 		List<Products> li = ob.getCartProducts();
 		
 		
+		HttpSession s = request.getSession(false);
+		String name=null;
+		try
+		{
+			name = (String) s.getAttribute("name");
+		}
+		catch(Exception e)
+		{
+			System.out.println("E:"+e);
+		}
+		
+		if (name != null) {
+			
+		}
+		
+		
 		request.setAttribute("abc", li);
-
-		request.getRequestDispatcher("./WEB-INF/pages/MyCart.jsp").forward(request, response);
+		
+		try {
+			request.getRequestDispatcher("./WEB-INF/pages/MyCart.jsp").forward(request, response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

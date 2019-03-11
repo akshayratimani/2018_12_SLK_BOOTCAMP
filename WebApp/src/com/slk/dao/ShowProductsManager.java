@@ -39,6 +39,7 @@ public class ShowProductsManager {
 				temp.setName(a.getName());
 				temp.setPrice(a.getPrice());
 				temp.setRating(a.getRating());
+				temp.setImg(a.getImg());
 			}
 		}
 		return temp;
@@ -66,23 +67,44 @@ public class ShowProductsManager {
 		return l;
 	}
 
-	public List<Products> SortByName() {
+	public List<Products> sortByNameAsc() {
 
-		List<Products> li = d.SortByName();
+		List<Products> li = d.sortByNameAsc();
+
+		return li;
+	}
+	
+	public List<Products> sortByNameDesc() {
+
+		List<Products> li = d.sortByNameDesc();
 
 		return li;
 	}
 
-	public List<Products> SortByPrice() {
+	public List<Products> sortByPriceDesc() {
 
-		List<Products> li = d.SortByPrice();
+		List<Products> li = d.sortByPriceDesc();
+
+		return li;
+	}
+	
+	public List<Products> sortByPriceAsc() {
+
+		List<Products> li = d.sortByPriceAsc();
+
+		return li;
+	}
+	
+	public List<Products> sortByRatingAsc() {
+
+		List<Products> li = d.sortByRatingAsc();
 
 		return li;
 	}
 
-	public List<Products> SortByRating() {
+	public List<Products> sortByRatingDesc() {
 
-		List<Products> li = d.SortByRating();
+		List<Products> li = d.sortByRatingDesc();
 
 		return li;
 	}

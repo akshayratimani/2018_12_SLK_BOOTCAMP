@@ -66,10 +66,25 @@
 
 	<div style="position: absolute; left: 300px; top: 145px;">
 		<h6>
-			<b>sort by : <pre>
-					<a href="./Sort?sort=name">Name</a>  <a href="./Sort?sort=price">Price</a>  <a
-						href="./Sort?sort=rating">Rating</a> </pre></b>
-		</h6>
+			<b>sort by :
+				<form action="./Sort" method="get">
+					<div style="position: absolute; left: 65px; top: 0px;">
+
+						<select name="a">
+							<option value="PriceAsc">Price Low->High</option>
+							<option value="PriceDesc">Price High->Low</option>
+							<option value="RatingAsc">Rating Low->High</option>
+							<option value="RatingDesc">Rating High->Low</option>
+							<option value="NameAsc">Name A->Z</option>
+							<option value="NameDesc">Name Z->A</option>
+						</select>
+						<div style="position: absolute; left: 150px; top: 0px;">
+							<input type="submit" value="Sort">
+						</div>
+					</div>
+	</div>
+	</form>
+	</h6>
 	</div>
 
 	<%
@@ -79,6 +94,9 @@
 	%>
 	<div style="background-color: #DBE1E1">
 		<hr>
+		<div style="position: relative; left: 15px; top: 0px;">
+				<img width="150px" height="150px" alt="Image not Found" src="./assets/images/<%=p.getImg() %>" />
+			</div><br>
 		<b>ProductName:<%=p.getName()%></b><br> Price:<%=p.getPrice()%><br>
 		Rating:<%
 			int n = (int) p.getRating();
